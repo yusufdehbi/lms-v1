@@ -1,0 +1,296 @@
+{% extends 'starter.html' %}
+{% load static %}
+
+{% block page-title %}
+Employee Management
+{% endblock %}
+
+{% block styles %} 
+
+        <!-- DataTables -->
+        <link href="{% static 'assets/libs/datatables.net-bs4/css/dataTables.bootstrap4.min.css' %}" rel="stylesheet" type="text/css">
+        <link href="{% static 'assets/libs/datatables.net-buttons-bs4/css/buttons.bootstrap4.min.css' %}" rel="stylesheet" type="text/css">
+    
+        <!-- Responsive datatable examples -->
+        <link href="{% static 'assets/libs/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css' %}" rel="stylesheet" type="text/css">
+{% endblock %}
+
+{% block page-content %}
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+
+                <!-- <h4 class="card-title">List of employees</h4> -->
+
+                <div class="row">
+                    <div class="col-12 my-2">
+                        <a type="button" class="btn btn-primary waves-effect waves-light" href="{% url 'add-employee' %}" >Ajouter un employee</a>
+
+                    </div>
+                </div>
+
+                <table id="datatable-buttons" class="table table-striped table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
+                    <thead>
+                        <tr>
+                            <th>Employee Name</th>
+                            <th>Username</th>
+                            <th>Department</th>
+                            <th>Position</th>
+                            <th>Email Address</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+
+
+                    <tbody>
+                        <tr>
+                            <td><a href="#">John Doe</a></td>
+                            <td>johndoe123</td>
+                            <td>Marketing</td>
+                            <td>Manager</td>
+                            <td>john.doe@example.com</td>
+                            <td>
+                                <a class="btn btn-outline-primary waves-effect waves-light" href="#" role="button">Edit</a>
+                                <a class="btn btn-outline-danger waves-effect waves-light" href="#" role="button">Delete</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><a href="#">Jane Smith</a></td>
+                            <td>janesmith456</td>
+                            <td>Human Resources</td>
+                            <td>HR Specialist</td>
+                            <td>jane.smith@example.com</td>
+                            <td>
+                                <a class="btn btn-outline-primary waves-effect waves-light" href="#" role="button">Edit</a>
+                                <a class="btn btn-outline-danger waves-effect waves-light" href="#" role="button">Delete</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><a href="#">Michael Johnson</a></td>
+                            <td>michaelj123</td>
+                            <td>Finance</td>
+                            <td>Financial Analyst</td>
+                            <td>michael.johnson@example.com</td>
+                            <td>
+                                <a class="btn btn-outline-primary waves-effect waves-light" href="#" role="button">Edit</a>
+                                <a class="btn btn-outline-danger waves-effect waves-light" href="#" role="button">Delete</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><a href="#">Emily Davis</a></td>
+                            <td>emilyd456</td>
+                            <td>Engineering</td>
+                            <td>Software Engineer</td>
+                            <td>emily.davis@example.com</td>
+                            <td>
+                                <a class="btn btn-outline-primary waves-effect waves-light" href="#" role="button">Edit</a>
+                                <a class="btn btn-outline-danger waves-effect waves-light" href="#" role="button">Delete</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><a href="#">David Wilson</a></td>
+                            <td>davidw789</td>
+                            <td>Sales</td>
+                            <td>Sales Manager</td>
+                            <td>david.wilson@example.com</td>
+                            <td>
+                                <a class="btn btn-outline-primary waves-effect waves-light" href="#" role="button">Edit</a>
+                                <a class="btn btn-outline-danger waves-effect waves-light" href="#" role="button">Delete</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><a href="#">Sarah Brown</a></td>
+                            <td>sarahb123</td>
+                            <td>Marketing</td>
+                            <td>Marketing Coordinator</td>
+                            <td>sarah.brown@example.com</td>
+                            <td>
+                                <a class="btn btn-outline-primary waves-effect waves-light" href="#" role="button">Edit</a>
+                                <a class="btn btn-outline-danger waves-effect waves-light" href="#" role="button">Delete</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><a href="#">Daniel Lee</a></td>
+                            <td>daniell789</td>
+                            <td>Finance</td>
+                            <td>Accountant</td>
+                            <td>daniel.lee@example.com</td>
+                            <td>
+                                <a class="btn btn-outline-primary waves-effect waves-light" href="#" role="button">Edit</a>
+                                <a class="btn btn-outline-danger waves-effect waves-light" href="#" role="button">Delete</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><a href="#">Olivia Taylor</a></td>
+                            <td>oliviat456</td>
+                            <td>Engineering</td>
+                            <td>Hardware Engineer</td>
+                            <td>olivia.taylor@example.com</td>
+                            <td>
+                                <a class="btn btn-outline-primary waves-effect waves-light" href="#" role="button">Edit</a>
+                                <a class="btn btn-outline-danger waves-effect waves-light" href="#" role="button">Delete</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><a href="#">James Smith</a></td>
+                            <td>jamesm123</td>
+                            <td>Sales</td>
+                            <td>Sales Representative</td>
+                            <td>james.smith@example.com</td>
+                            <td>
+                                <a class="btn btn-outline-primary waves-effect waves-light" href="#" role="button">Edit</a>
+                                <a class="btn btn-outline-danger waves-effect waves-light" href="#" role="button">Delete</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><a href="#">Sophia Johnson</a></td>
+                            <td>sophiaj456</td>
+                            <td>Human Resources</td>
+                            <td>Recruiter</td>
+                            <td>sophia.johnson@example.com</td>
+                            <td>
+                                <a class="btn btn-outline-primary waves-effect waves-light" href="#" role="button">Edit</a>
+                                <a class="btn btn-outline-danger waves-effect waves-light" href="#" role="button">Delete</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><a href="#">William Miller</a></td>
+                            <td>williamm123</td>
+                            <td>Finance</td>
+                            <td>Financial Planner</td>
+                            <td>william.miller@example.com</td>
+                            <td>
+                                <a class="btn btn-outline-primary waves-effect waves-light" href="#" role="button">Edit</a>
+                                <a class="btn btn-outline-danger waves-effect waves-light" href="#" role="button">Delete</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><a href="#">Emma Wilson</a></td>
+                            <td>emmaw456</td>
+                            <td>Engineering</td>
+                            <td>Software Developer</td>
+                            <td>emma.wilson@example.com</td>
+                            <td>
+                                <a class="btn btn-outline-primary waves-effect waves-light" href="#" role="button">Edit</a>
+                                <a class="btn btn-outline-danger waves-effect waves-light" href="#" role="button">Delete</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><a href="#">Alexander Brown</a></td>
+                            <td>alexanderb123</td>
+                            <td>Sales</td>
+                            <td>Sales Associate</td>
+                            <td>alexander.brown@example.com</td>
+                            <td>
+                                <a class="btn btn-outline-primary waves-effect waves-light" href="#" role="button">Edit</a>
+                                <a class="btn btn-outline-danger waves-effect waves-light" href="#" role="button">Delete</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><a href="#">Olivia Davis</a></td>
+                            <td>oliviad456</td>
+                            <td>Marketing</td>
+                            <td>Marketing Manager</td>
+                            <td>olivia.davis@example.com</td>
+                            <td>
+                                <a class="btn btn-outline-primary waves-effect waves-light" href="#" role="button">Edit</a>
+                                <a class="btn btn-outline-danger waves-effect waves-light" href="#" role="button">Delete</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><a href="#">Noah Smith</a></td>
+                            <td>noahs123</td>
+                            <td>Human Resources</td>
+                            <td>HR Director</td>
+                            <td>noah.smith@example.com</td>
+                            <td>
+                                <a class="btn btn-outline-primary waves-effect waves-light" href="#" role="button">Edit</a>
+                                <a class="btn btn-outline-danger waves-effect waves-light" href="#" role="button">Delete</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><a href="#">Ava Johnson</a></td>
+                            <td>avaj456</td>
+                            <td>Engineering</td>
+                            <td>Hardware Designer</td>
+                            <td>ava.johnson@example.com</td>
+                            <td>
+                                <a class="btn btn-outline-primary waves-effect waves-light" href="#" role="button">Edit</a>
+                                <a class="btn btn-outline-danger waves-effect waves-light" href="#" role="button">Delete</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><a href="#">Liam Davis</a></td>
+                            <td>liamd789</td>
+                            <td>Finance</td>
+                            <td>Financial Analyst</td>
+                            <td>liam.davis@example.com</td>
+                            <td>
+                                <a class="btn btn-outline-primary waves-effect waves-light" href="#" role="button">Edit</a>
+                                <a class="btn btn-outline-danger waves-effect waves-light" href="#" role="button">Delete</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><a href="#">Mia Taylor</a></td>
+                            <td>miat456</td>
+                            <td>Marketing</td>
+                            <td>Marketing Specialist</td>
+                            <td>mia.taylor@example.com</td>
+                            <td>
+                                <a class="btn btn-outline-primary waves-effect waves-light" href="#" role="button">Edit</a>
+                                <a class="btn btn-outline-danger waves-effect waves-light" href="#" role="button">Delete</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><a href="#">Henry Lee</a></td>
+                            <td>henryl123</td>
+                            <td>Sales</td>
+                            <td>Sales Manager</td>
+                            <td>henry.lee@example.com</td>
+                            <td>
+                                <a class="btn btn-outline-primary waves-effect waves-light" href="#" role="button">Edit</a>
+                                <a class="btn btn-outline-danger waves-effect waves-light" href="#" role="button">Delete</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><a href="#">Ella Anderson</a></td>
+                            <td>ellaa456</td>
+                            <td>Human Resources</td>
+                            <td>HR Specialist</td>
+                            <td>ella.anderson@example.com</td>
+                            <td>
+                                <a class="btn btn-outline-primary waves-effect waves-light" href="#" role="button">Edit</a>
+                                <a class="btn btn-outline-danger waves-effect waves-light" href="#" role="button">Delete</a>
+                            </td>
+                        </tr>
+                                                
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+    </div> <!-- end col -->
+</div> <!-- end row -->
+{% endblock %}
+
+{% block scripts %} 
+        <!-- Required datatable js -->
+        <script src="{% static 'assets/libs/datatables.net/js/jquery.dataTables.min.js' %}"></script>
+        <script src="{% static 'assets/libs/datatables.net-bs4/js/dataTables.bootstrap4.min.js' %}"></script>
+        <!-- Buttons examples -->
+        <script src="{% static 'assets/libs/datatables.net-buttons/js/dataTables.buttons.min.js' %}"></script>
+        <script src="{% static 'assets/libs/datatables.net-buttons-bs4/js/buttons.bootstrap4.min.js' %}"></script>
+        <script src="{% static 'assets/libs/jszip/jszip.min.js' %}"></script>
+        <script src="{% static 'assets/libs/pdfmake/build/pdfmake.min.js' %}"></script>
+        <script src="{% static 'assets/libs/pdfmake/build/vfs_fonts.js' %}"></script>
+        <script src="{% static 'assets/libs/datatables.net-buttons/js/buttons.html5.min.js' %}"></script>
+        <script src="{% static 'assets/libs/datatables.net-buttons/js/buttons.print.min.js' %}"></script>
+        <script src="{% static 'assets/libs/datatables.net-buttons/js/buttons.colVis.min.js' %}"></script>
+        <!-- Responsive examples -->
+        <script src="{% static 'assets/libs/datatables.net-responsive/js/dataTables.responsive.min.js' %}"></script>
+        <script src="{% static 'assets/libs/datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js' %}"></script>
+
+        <!-- Datatable init js -->
+        <script src="{% static 'assets/js/pages/datatables.init.js' %}"></script> 
+{% endblock %}

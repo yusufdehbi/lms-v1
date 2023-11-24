@@ -1,0 +1,438 @@
+{% extends 'starter.html' %} {% load static %} {% block page-title %} Add
+Employee {% endblock %} {% block page-content %}
+
+<div class="row">
+  <div class="col-lg-6">
+      <div class="card">
+          <div class="card-body">
+              <h4 class="card-title">Employee Details</h4>
+              <p class="card-title-desc">Parsley is a javascript form validation
+                  library. It helps you provide your users with feedback on their form
+                  submission before sending it to your server.</p>
+              <form class="row g-3 needs-validation" novalidate>
+                  <div class="col-md-4">
+                      <label for="validationCustom01" class="form-label">First name</label>
+                      <input type="text" class="form-control" id="validationCustom01" placeholder="Mark" required>
+                      <div class="valid-feedback">
+                          Looks good!
+                      </div>
+                  </div>
+                  <!-- end col -->
+                  <div class="col-md-4">
+                      <label for="validationCustom02" class="form-label">Last name</label>
+                      <input type="text" class="form-control" id="validationCustom02" placeholder="Otto" required>
+                      <div class="valid-feedback">
+                          Looks good!
+                      </div>
+                  </div>
+                  <!-- end col -->
+                  <div class="col-md-4">
+                      <label for="validationCustomUsername" class="form-label">Employee ID</label>
+                      <div class="input-group has-validation">
+                          <span class="input-group-text" id="inputGroupPrepend">@</span>
+                          <input type="text" class="form-control" id="validationCustomUsername"
+                              aria-describedby="inputGroupPrepend" required>
+                          <div class="invalid-feedback">
+                              Please choose a username.
+                          </div>
+                      </div>
+                  </div>
+                  <!-- end col -->
+                  <div class="col-md-6">
+                      <label for="validationCustom03" class="form-label">Phone</label>
+                      <input type="text" class="form-control" id="validationCustom03" required>
+                      <div class="invalid-feedback">
+                          Please provide a valid city.
+                      </div>
+                  </div>
+                  <!-- end col -->
+                  <div class="col-md-6">
+                    <label for="validationCustom10" class="form-label">Address</label>
+                    <input type="text" class="form-control" id="validationCustom10" required>
+                    <div class="invalid-feedback">
+                        Please provide a valid city.
+                    </div>
+                  </div>
+                <!-- end col -->
+                  <div class="col-md-6">
+                      <!-- <label for="validationCustom04" class="form-label">State</label>
+                      <select class="form-select" id="validationCustom04" required>
+                          <option selected disabled value="">Choose...</option>
+                          <option>...</option>
+                      </select> -->
+
+                      <label for="validationCustom04" class="form-label">Position</label>
+                        <select class="form-control select2" id="validationCustom04" required>
+                                                  <option selected disabled>Select</option>
+                                                  <optgroup label="Work Positions">
+                                                      <option value="AK">Software Engineer</option>
+                                                      <option value="HI">Product Manager</option>
+                                                      <option value="CA">Data Analyst</option>
+                                                      <option value="NV">Sales Representative</option>
+                                                      <option value="OR">Graphic Designer</option>
+                                                      <option value="WA">Marketing Specialist</option>
+                                                      <option value="AZ">HR Manager</option>
+                                                      <option value="CO">Financial Analyst</option>
+                                                      <option value="ID">Customer Service Representative</option>
+                                                      <option value="MT">Project Manager</option>
+                                                      <option value="NE">Accountant</option>
+                                                      <option value="NM">UX Designer</option>
+                                                      <option value="ND">Operations Manager</option>
+                                                      <option value="UT">Software Developer</option>
+                                                      <option value="WY">Content Writer</option>
+                                                      <option value="AL">Sales Manager</option>
+                                                      <option value="AR">Marketing Manager</option>
+                                                      <option value="IL">Business Analyst</option>
+                                                      <option value="IA">Web Developer</option>
+                                                      <option value="KS">Digital Marketing Specialist</option>
+                                                  </optgroup>
+                                                  
+                        </select>
+                      <div class="invalid-feedback">
+                          Please select a valid Position. 
+                      </div>
+                  </div>
+                  <!-- end col -->
+                  <div class="col-md-6">
+                      <label for="validationCustom05" class="form-label">Email</label>
+                      <input type="email" class="form-control" id="validationCustom05" required parsley-type="email" placeholder="enter a valid email">
+                      <div class="invalid-feedback">
+                          Please enter a valid email
+                      </div>
+                  </div>
+                  <!-- end col -->
+                  <!-- <div class="col-12">
+                      <div class="form-check">
+                          <input class="form-check-input" type="checkbox" value="" id="invalidCheck1" required>
+                          <label class="form-check-label" for="invalidCheck1">
+                              Agree to terms and conditions
+                          </label>
+                          <div class="invalid-feedback">
+                              You must agree before submitting.
+                          </div>
+                      </div>
+                  </div> -->
+                  <!-- end col -->
+                  <div class="col-12">
+                      <button class="btn btn-primary" type="submit">Submit form</button>
+                  </div>
+                  <!-- end col -->
+              </form><!-- end form -->
+          </div><!-- end cardbody -->
+      </div><!-- end card -->
+  </div>
+  <!-- end col -->
+  <div class="col-lg-6">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Striped rows</h4>
+            <p class="card-title-desc">leaves of the agent</p>    
+            
+            <div class="table-responsive">
+                <table class="table table-striped mb-0">
+
+                    <thead>
+                        <tr>
+                            <th>Leave Type</th>
+                            <th>Balence</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Leave_type_1</td>
+                            <td>22</td>
+                        </tr>
+                        <tr>
+                            <td>Leave_type_2</td>
+                            <td>30</td>
+                        </tr>
+                        <tr>
+                            <td>leave_type_3</td>
+                            <td>10</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <form class="row g-3 needs-validation py-3" novalidate>
+              <div class="col-md-4">
+                  <label for="validationCustom01" class="form-label">Leave Type</label>
+                  <input type="text" class="form-control" id="validationCustom01" placeholder="sick" required>
+                  <div class="valid-feedback">
+                      Looks good!
+                  </div>
+              </div>
+              <!-- end col -->
+              <div class="col-md-4">
+                  <label for="validationCustom02" class="form-label">Numbers of days</label>
+                  <input type="number" class="form-control" id="validationCustom02" placeholder="21" min="0" required>
+                  <div class="valid-feedback">
+                      Looks good!
+                  </div>
+              </div>
+              <!-- end col -->
+              <div class="col-md-4 d-flex align-items-end">
+                <button class="btn btn-primary" type="submit">Add Leave Record</button>
+              </div>
+              <!-- end col -->
+
+        </div>
+    </div>
+</div>
+
+</div>
+<!-- end row -->
+{% endblock %} 
+
+{% block startStyles %}
+  
+<link href="{% static 'assets/libs/select2/css/select2.min.css' %}" rel="stylesheet" type="text/css">
+<link href="{% static 'assets/libs/bootstrap-datepicker/css/bootstrap-datepicker.min.css' %}" rel="stylesheet">
+<link href="{% static 'assets/libs/spectrum-colorpicker2/spectrum.min.css' %}" rel="stylesheet" type="text/css">
+<link href="{% static 'assets/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.min.css' %}" rel="stylesheet">
+
+{% endblock startStyles %}
+
+{% block scripts %}
+<script src="{% static 'assets/libs/select2/js/select2.min.js' %}"></script>
+<script src="{% static 'assets/libs/bootstrap-datepicker/js/bootstrap-datepicker.min.js' %}"></script>
+<script src="{% static 'assets/libs/spectrum-colorpicker2/spectrum.min.js' %}"></script>
+<script src="{% static 'assets/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.min.js' %}"></script>
+<script src="{% static 'assets/libs/admin-resources/bootstrap-filestyle/bootstrap-filestyle.min.js' %}"></script>
+<script src="{% static 'assets/libs/bootstrap-maxlength/bootstrap-maxlength.min.js' %}"></script>
+
+<script src="{% static 'assets/libs/parsleyjs/parsley.min.js' %}"></script>
+
+<!-- <script src="{% static 'assets/js/pages/form-advanced.init.js' %}"></script> -->
+
+<!-- advanced form -->
+<script>
+  !(function (t) {
+  "use strict";
+  function e() {}
+  (e.prototype.init = function () {
+    t(".select2").select2(),
+      t(".select2-limiting").select2({ maximumSelectionLength: 2 }),
+      t("#colorpicker-default").spectrum(),
+      t("#colorpicker-showalpha").spectrum({ showAlpha: !0 }),
+      t("#colorpicker-showpaletteonly").spectrum({
+        showPaletteOnly: !0,
+        showPalette: !0,
+        color: "#34c38f",
+        palette: [
+          ["#556ee6", "white", "#34c38f", "rgb(255, 128, 0);", "#50a5f1"],
+          ["red", "yellow", "green", "blue", "violet"],
+        ],
+      }),
+      t("#colorpicker-togglepaletteonly").spectrum({
+        showPaletteOnly: !0,
+        togglePaletteOnly: !0,
+        togglePaletteMoreText: "more",
+        togglePaletteLessText: "less",
+        color: "#556ee6",
+        palette: [
+          ["#000", "#444", "#666", "#999", "#ccc", "#eee", "#f3f3f3", "#fff"],
+          ["#f00", "#f90", "#ff0", "#0f0", "#0ff", "#00f", "#90f", "#f0f"],
+          [
+            "#f4cccc",
+            "#fce5cd",
+            "#fff2cc",
+            "#d9ead3",
+            "#d0e0e3",
+            "#cfe2f3",
+            "#d9d2e9",
+            "#ead1dc",
+          ],
+          [
+            "#ea9999",
+            "#f9cb9c",
+            "#ffe599",
+            "#b6d7a8",
+            "#a2c4c9",
+            "#9fc5e8",
+            "#b4a7d6",
+            "#d5a6bd",
+          ],
+          [
+            "#e06666",
+            "#f6b26b",
+            "#ffd966",
+            "#93c47d",
+            "#76a5af",
+            "#6fa8dc",
+            "#8e7cc3",
+            "#c27ba0",
+          ],
+          [
+            "#c00",
+            "#e69138",
+            "#f1c232",
+            "#6aa84f",
+            "#45818e",
+            "#3d85c6",
+            "#674ea7",
+            "#a64d79",
+          ],
+          [
+            "#900",
+            "#b45f06",
+            "#bf9000",
+            "#38761d",
+            "#134f5c",
+            "#0b5394",
+            "#351c75",
+            "#741b47",
+          ],
+          [
+            "#600",
+            "#783f04",
+            "#7f6000",
+            "#274e13",
+            "#0c343d",
+            "#073763",
+            "#20124d",
+            "#4c1130",
+          ],
+        ],
+      }),
+      t("#colorpicker-showintial").spectrum({ showInitial: !0 }),
+      t("#colorpicker-showinput-intial").spectrum({
+        showInitial: !0,
+        showInput: !0,
+      }),
+      t("#datepicker").datepicker(),
+      t("#datepicker-inline").datepicker(),
+      t("#datepicker-multiple").datepicker({
+        numberOfMonths: 3,
+        showButtonPanel: !0,
+      }),
+      t("#datepicker").datepicker(),
+      t("#datepicker-autoclose").datepicker({
+        autoclose: !0,
+        todayHighlight: !0,
+      }),
+      t("#datepicker-multiple-date").datepicker({
+        format: "mm/dd/yyyy",
+        clearBtn: !0,
+        multidate: !0,
+        multidateSeparator: ",",
+      }),
+      t("#date-range").datepicker({ toggleActive: !0 });
+    t(".vertical-spin").TouchSpin({
+      verticalbuttons: !0,
+      verticalupclass: "ion-plus-round",
+      verticaldownclass: "ion-minus-round",
+      buttondown_class: "btn btn-primary",
+      buttonup_class: "btn btn-primary",
+    }),
+      t("input[name='demo1']").TouchSpin({
+        min: 0,
+        max: 100,
+        step: 0.1,
+        decimals: 2,
+        boostat: 5,
+        maxboostedstep: 10,
+        postfix: "%",
+        buttondown_class: "btn btn-primary",
+        buttonup_class: "btn btn-primary",
+      }),
+      t("input[name='demo2']").TouchSpin({
+        min: -1e9,
+        max: 1e9,
+        stepinterval: 50,
+        maxboostedstep: 1e7,
+        prefix: "$",
+        buttondown_class: "btn btn-primary",
+        buttonup_class: "btn btn-primary",
+      }),
+      t("input[name='demo3']").TouchSpin({
+        buttondown_class: "btn btn-primary",
+        buttonup_class: "btn btn-primary",
+      }),
+      t("input[name='demo3_21']").TouchSpin({
+        initval: 40,
+        buttondown_class: "btn btn-primary",
+        buttonup_class: "btn btn-primary",
+      }),
+      t("input[name='demo3_22']").TouchSpin({
+        initval: 40,
+        buttondown_class: "btn btn-primary",
+        buttonup_class: "btn btn-primary",
+      }),
+      t("input[name='demo5']").TouchSpin({
+        prefix: "pre",
+        postfix: "post",
+        buttondown_class: "btn btn-primary",
+        buttonup_class: "btn btn-primary",
+      }),
+      t("input[name='demo0']").TouchSpin({
+        buttondown_class: "btn btn-primary",
+        buttonup_class: "btn btn-primary",
+      }),
+      t("input#defaultconfig").maxlength({
+        warningClass: "badge bg-info",
+        limitReachedClass: "badge bg-warning",
+      }),
+      t("input#thresholdconfig").maxlength({
+        threshold: 20,
+        warningClass: "badge bg-info",
+        limitReachedClass: "badge bg-warning",
+      }),
+      t("input#moreoptions").maxlength({
+        alwaysShow: !0,
+        warningClass: "badge bg-success",
+        limitReachedClass: "badge bg-danger",
+      }),
+      t("input#alloptions").maxlength({
+        alwaysShow: !0,
+        warningClass: "badge bg-success",
+        limitReachedClass: "badge bg-danger",
+        separator: " out of ",
+        preText: "You typed ",
+        postText: " chars available.",
+        validate: !0,
+      }),
+      t("textarea#textarea").maxlength({
+        alwaysShow: !0,
+        warningClass: "badge bg-info",
+        limitReachedClass: "badge bg-warning",
+      }),
+      t("input#placement").maxlength({
+        alwaysShow: !0,
+        placement: "top-left",
+        warningClass: "badge bg-info",
+        limitReachedClass: "badge bg-warning",
+      });
+  }),
+    (t.AdvancedForm = new e()),
+    (t.AdvancedForm.Constructor = e);
+})(window.jQuery),
+  (function () {
+    "use strict";
+    window.jQuery.AdvancedForm.init();
+  })();
+
+</script>
+
+<!-- form validation -->
+<script>
+  $(document).ready(function () {
+  $(".custom-validation").parsley();
+}),
+  (function () {
+    "use strict";
+    var t = document.querySelectorAll(".needs-validation");
+    Array.prototype.slice.call(t).forEach(function (a) {
+      a.addEventListener(
+        "submit",
+        function (t) {
+          a.checkValidity() || (t.preventDefault(), t.stopPropagation()),
+            a.classList.add("was-validated");
+        },
+        !1
+      );
+    });
+  })();
+
+</script>
+{% endblock %}

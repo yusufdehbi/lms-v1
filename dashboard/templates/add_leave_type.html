@@ -1,0 +1,53 @@
+{% extends 'starter.html' %}
+{% load static %}
+
+{% block page-title %}
+Add Leave Type
+{% endblock %}
+
+{% block styles %} 
+
+{% endblock %}
+
+{% block page-content %}
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+
+                <h4 class="card-title">Leave Type Details</h4>
+                <p class="card-title-desc">Enter the leave type details informations.</p>
+                
+
+                <form action="">
+                    <div class="row mb-3">
+                        <label for="example-text-input" class="col-sm-2 col-form-label">Leave Type</label>
+                        <div class="col-sm-10">
+                            <input class="form-control" type="text" placeholder="Annuel" id="example-text-input">
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <label for="example-text-input" class="col-sm-2 col-form-label">Description</label>
+                        <div class="col-sm-10">
+                            <textarea class="form-control" type="text" placeholder="leave type description" id="example-text-input"></textarea>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <label for="example-number-input" class="col-sm-2 col-form-label">Balence</label>
+                        <div class="col-sm-10">
+                            <input class="form-control" type="number" value="1" min="1" id="example-number-input">
+                        </div>
+                    </div>
+                    <div class="col-12 d-flex justify-content-end px-2">
+                        <div class="col-xl-1 col-lg-2 row">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                        </div>
+                    </div>
+
+                </form>
+
+            </div>
+        </div>
+    </div> <!-- end col -->
+</div> <!-- end row -->
+{% endblock %}

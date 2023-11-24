@@ -1,0 +1,348 @@
+{% extends 'starter.html' %}
+{% load static %}
+
+{% block page-title %}
+Leave Request Management 
+{% endblock %}
+
+{% block styles %} 
+
+        <!-- DataTables -->
+        <link href="{% static 'assets/libs/datatables.net-bs4/css/dataTables.bootstrap4.min.css' %}" rel="stylesheet" type="text/css">
+        <link href="{% static 'assets/libs/datatables.net-buttons-bs4/css/buttons.bootstrap4.min.css' %}" rel="stylesheet" type="text/css">
+    
+        <!-- Responsive datatable examples -->
+        <link href="{% static 'assets/libs/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css' %}" rel="stylesheet" type="text/css">
+{% endblock %}
+
+{% block page-content %}
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+
+                <!-- <h4 class="card-title">List of employees</h4> -->
+
+                <div class="row">
+                    <div class="col-12 my-2">
+                        <button type="button" class="btn btn-primary waves-effect waves-light" >Ajouter un conge</button>
+
+                    </div>
+                </div>
+
+                <table id="datatable-buttons" class="table table-striped table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
+                    <thead>
+                        <tr>
+                            <th>Employee Name</th>
+                            <th>Leave Type</th>
+                            <th>Start Date</th>
+                            <th>End Date</th>
+                            <th>Reason</th>
+                            <th>Status</th>
+                            <th>Admin Note</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+
+
+                    <tbody>
+                        <tr>
+                            <td>John Doe</td>
+                            <td>Vacation</td>
+                            <td>2023-10-15</td>
+                            <td>2023-10-20</td>
+                            <td>Family vacation</td>
+                            <td><span class="badge bg-warning">Pending</span>
+                            </td>
+                            <td></td>
+                            <td>
+                                <a class="btn btn-outline-primary waves-effect waves-light" href="#" role="button">View</a>
+                                <a class="btn btn-outline-success waves-effect waves-light" href="#" role="button">Approve</a>
+                                <a class="btn btn-outline-danger waves-effect waves-light" href="#" role="button">Reject</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Jane Smith</td>
+                            <td>Sick Leave</td>
+                            <td>2023-11-05</td>
+                            <td>2023-11-07</td>
+                            <td>Flu</td>
+                            <td>
+                                <span class="badge badge-secondary">Secondary</span>
+                            </td>
+                            <td>Get well soon!</td>
+                            <td>
+                                <a class="btn btn-outline-primary waves-effect waves-light" href="#" role="button">View</a>
+                                <a class="btn btn-outline-success waves-effect waves-light" href="#" role="button">Approve</a>
+                                <a class="btn btn-outline-danger waves-effect waves-light" href="#" role="button">Reject</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Michael Johnson</td>
+                            <td>Personal Leave</td>
+                            <td>2023-12-10</td>
+                            <td>2023-12-15</td>
+                            <td>Attending a wedding</td>
+                            <td>Pending</td>
+                            <td></td>
+                            <td>
+                                <a class="btn btn-outline-primary waves-effect waves-light" href="#" role="button">View</a>
+                                <a class="btn btn-outline-success waves-effect waves-light" href="#" role="button">Approve</a>
+                                <a class="btn btn-outline-danger waves-effect waves-light" href="#" role="button">Reject</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Emily Davis</td>
+                            <td>Maternity Leave</td>
+                            <td>2024-02-20</td>
+                            <td>2024-05-20</td>
+                            <td>Expecting a child</td>
+                            <td>Pending</td>
+                            <td></td>
+                            <td>
+                                <a class="btn btn-outline-primary waves-effect waves-light" href="#" role="button">View</a>
+                                <a class="btn btn-outline-success waves-effect waves-light" href="#" role="button">Approve</a>
+                                <a class="btn btn-outline-danger waves-effect waves-light" href="#" role="button">Reject</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>David Wilson</td>
+                            <td>Compensatory Leave</td>
+                            <td>2023-09-25</td>
+                            <td>2023-09-27</td>
+                            <td>Overtime work</td>
+                            <td>Approved</td>
+                            <td></td>
+                            <td>
+                                <a class="btn btn-outline-primary waves-effect waves-light" href="#" role="button">View</a>
+                                <a class="btn btn-outline-success waves-effect waves-light" href="#" role="button">Approve</a>
+                                <a class="btn btn-outline-danger waves-effect waves-light" href="#" role="button">Reject</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Sarah Brown</td>
+                            <td>Unpaid Leave</td>
+                            <td>2024-03-10</td>
+                            <td>2024-03-15</td>
+                            <td>Personal reasons</td>
+                            <td>Pending</td>
+                            <td></td>
+                            <td>
+                                <a class="btn btn-outline-primary waves-effect waves-light" href="#" role="button">View</a>
+                                <a class="btn btn-outline-success waves-effect waves-light" href="#" role="button">Approve</a>
+                                <a class="btn btn-outline-danger waves-effect waves-light" href="#" role="button">Reject</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Daniel Lee</td>
+                            <td>Study Leave</td>
+                            <td>2023-11-08</td>
+                            <td>2023-11-15</td>
+                            <td>Advanced programming course</td>
+                            <td>Approved</td>
+                            <td></td>
+                            <td>
+                                <a class="btn btn-outline-primary waves-effect waves-light" href="#" role="button">View</a>
+                                <a class="btn btn-outline-success waves-effect waves-light" href="#" role="button">Approve</a>
+                                <a class="btn btn-outline-danger waves-effect waves-light" href="#" role="button">Reject</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Olivia Taylor</td>
+                            <td>Annual Leave</td>
+                            <td>2024-06-01</td>
+                            <td>2024-06-10</td>
+                            <td>Vacation with family</td>
+                            <td>Pending</td>
+                            <td></td>
+                            <td>
+                                <a class="btn btn-outline-primary waves-effect waves-light" href="#" role="button">View</a>
+                                <a class="btn btn-outline-success waves-effect waves-light" href="#" role="button">Approve</a>
+                                <a class="btn btn-outline-danger waves-effect waves-light" href="#" role="button">Reject</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>James Smith</td>
+                            <td>Emergency Leave</td>
+                            <td>2023-08-15</td>
+                            <td>2023-08-16</td>
+                            <td>Family medical emergency</td>
+                            <td>Approved</td>
+                            <td>Please take care</td>
+                            <td>
+                                <a class="btn btn-outline-primary waves-effect waves-light" href="#" role="button">View</a>
+                                <a class="btn btn-outline-success waves-effect waves-light" href="#" role="button">Approve</a>
+                                <a class="btn btn-outline-danger waves-effect waves-light" href="#" role="button">Reject</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Sophia Johnson</td>
+                            <td>Training Leave</td>
+                            <td>2023-10-28</td>
+                            <td>2023-10-29</td>
+                            <td>Attending a training workshop</td>
+                            <td>Approved</td>
+                            <td>Enhance your skills</td>
+                            <td>
+                                <a class="btn btn-outline-primary waves-effect waves-light" href="#" role="button">View</a>
+                                <a class="btn btn-outline-success waves-effect waves-light" href="#" role="button">Approve</a>
+                                <a class="btn btn-outline-danger waves-effect waves-light" href="#" role="button">Reject</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>William Miller</td>
+                            <td>Maternity Leave</td>
+                            <td>2024-01-10</td>
+                            <td>2024-04-10</td>
+                            <td>Expecting a child</td>
+                            <td>Pending</td>
+                            <td></td>
+                            <td>
+                                <a class="btn btn-outline-primary waves-effect waves-light" href="#" role="button">View</a>
+                                <a class="btn btn-outline-success waves-effect waves-light" href="#" role="button">Approve</a>
+                                <a class="btn btn-outline-danger waves-effect waves-light" href="#" role="button">Reject</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Emma Wilson</td>
+                            <td>Personal Leave</td>
+                            <td>2023-11-20</td>
+                            <td>2023-11-25</td>
+                            <td>Family gathering</td>
+                            <td>Pending</td>
+                            <td></td>
+                            <td>
+                                <a class="btn btn-outline-primary waves-effect waves-light" href="#" role="button">View</a>
+                                <a class="btn btn-outline-success waves-effect waves-light" href="#" role="button">Approve</a>
+                                <a class="btn btn-outline-danger waves-effect waves-light" href="#" role="button">Reject</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Alexander Brown</td>
+                            <td>Sick Leave</td>
+                            <td>2024-03-05</td>
+                            <td>2024-03-07</td>
+                            <td>Flu</td>
+                            <td>Approved</td>
+                            <td>Get well soon!</td>
+                            <td>
+                                <a class="btn btn-outline-primary waves-effect waves-light" href="#" role="button">View</a>
+                                <a class="btn btn-outline-success waves-effect waves-light" href="#" role="button">Approve</a>
+                                <a class="btn btn-outline-danger waves-effect waves-light" href="#" role="button">Reject</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Olivia Davis</td>
+                            <td>Annual Leave</td>
+                            <td>2024-07-15</td>
+                            <td>2024-07-30</td>
+                            <td>Summer vacation</td>
+                            <td>Pending</td>
+                            <td></td>
+                            <td>
+                                <a class="btn btn-outline-primary waves-effect waves-light" href="#" role="button">View</a>
+                                <a class="btn btn-outline-success waves-effect waves-light" href="#" role="button">Approve</a>
+                                <a class="btn btn-outline-danger waves-effect waves-light" href="#" role="button">Reject</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Noah Smith</td>
+                            <td>Emergency Leave</td>
+                            <td>2023-09-05</td>
+                            <td>2023-09-06</td>
+                            <td>Medical emergency</td>
+                            <td>Approved</td>
+                            <td>Please take care</td>
+                            <td>
+                                <a class="btn btn-outline-primary waves-effect waves-light" href="#" role="button">View</a>
+                                <a class="btn btn-outline-success waves-effect waves-light" href="#" role="button">Approve</a>
+                                <a class="btn btn-outline-danger waves-effect waves-light" href="#" role="button">Reject</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Ava Johnson</td>
+                            <td>Unpaid Leave</td>
+                            <td>2024-02-10</td>
+                            <td>2024-02-15</td>
+                            <td>Personal reasons</td>
+                            <td>Pending</td>
+                            <td></td>
+                            <td>
+                                <a class="btn btn-outline-primary waves-effect waves-light" href="#" role="button">View</a>
+                                <a class="btn btn-outline-success waves-effect waves-light" href="#" role="button">Approve</a>
+                                <a class="btn btn-outline-danger waves-effect waves-light" href="#" role="button">Reject</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Liam Davis</td>
+                            <td>Compensatory Leave</td>
+                            <td>2023-10-15</td>
+                            <td>2023-10-17</td>
+                            <td>Overtime work</td>
+                            <td>Approved</td>
+                            <td></td>
+                            <td>
+                                <a class="btn btn-outline-primary waves-effect waves-light" href="#" role="button">View</a>
+                                <a class="btn btn-outline-success waves-effect waves-light" href="#" role="button">Approve</a>
+                                <a class="btn btn-outline-danger waves-effect waves-light" href="#" role="button">Reject</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Mia Taylor</td>
+                            <td>Training Leave</td>
+                            <td>2023-12-05</td>
+                            <td>2023-12-07</td>
+                            <td>Professional development</td>
+                            <td>Pending</td>
+                            <td></td>
+                            <td>
+                                <a class="btn btn-outline-primary waves-effect waves-light" href="#" role="button">View</a>
+                                <a class="btn btn-outline-success waves-effect waves-light" href="#" role="button">Approve</a>
+                                <a class="btn btn-outline-danger waves-effect waves-light" href="#" role="button">Reject</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Henry Lee</td>
+                            <td>Study Leave</td>
+                            <td>2023-11-25</td>
+                            <td>2023-11-30</td>
+                            <td>Advanced project management course</td>
+                            <td>Pending</td>
+                            <td></td>
+                            <td>
+                                <a class="btn btn-outline-primary waves-effect waves-light" href="#" role="button">View</a>
+                                <a class="btn btn-outline-success waves-effect waves-light" href="#" role="button">Approve</a>
+                                <a class="btn btn-outline-danger waves-effect waves-light" href="#" role="button">Reject</a>
+                            </td>
+                        </tr>
+                        
+                                                
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+    </div> <!-- end col -->
+</div> <!-- end row -->
+{% endblock %}
+
+{% block scripts %} 
+        <!-- Required datatable js -->
+        <script src="{% static 'assets/libs/datatables.net/js/jquery.dataTables.min.js' %}"></script>
+        <script src="{% static 'assets/libs/datatables.net-bs4/js/dataTables.bootstrap4.min.js' %}"></script>
+        <!-- Buttons examples -->
+        <script src="{% static 'assets/libs/datatables.net-buttons/js/dataTables.buttons.min.js' %}"></script>
+        <script src="{% static 'assets/libs/datatables.net-buttons-bs4/js/buttons.bootstrap4.min.js' %}"></script>
+        <script src="{% static 'assets/libs/jszip/jszip.min.js' %}"></script>
+        <script src="{% static 'assets/libs/pdfmake/build/pdfmake.min.js' %}"></script>
+        <script src="{% static 'assets/libs/pdfmake/build/vfs_fonts.js' %}"></script>
+        <script src="{% static 'assets/libs/datatables.net-buttons/js/buttons.html5.min.js' %}"></script>
+        <script src="{% static 'assets/libs/datatables.net-buttons/js/buttons.print.min.js' %}"></script>
+        <script src="{% static 'assets/libs/datatables.net-buttons/js/buttons.colVis.min.js' %}"></script>
+        <!-- Responsive examples -->
+        <script src="{% static 'assets/libs/datatables.net-responsive/js/dataTables.responsive.min.js' %}"></script>
+        <script src="{% static 'assets/libs/datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js' %}"></script>
+
+        <!-- Datatable init js -->
+        <script src="{% static 'assets/js/pages/datatables.init.js' %}"></script> 
+{% endblock %}

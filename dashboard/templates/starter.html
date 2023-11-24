@@ -3,7 +3,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>Starter No Page | Veltrix - Admin & Dashboard Template</title>
+    <title>ODCO | Leave Management System</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       content="Premium Multipurpose Admin & Dashboard Template"
@@ -11,7 +11,12 @@
     />
     <meta content="Themesbrand" name="author" />
     <!-- App favicon -->
-    <link rel="shortcut icon" href="{% static 'assets/images/favicon.ico' %}" />
+    <link rel="shortcut icon" href="{% static 'assets/images/logo -icon.png' %}" />
+
+    
+    {% block startStyles %}
+    {% endblock startStyles %}
+      
 
     <!-- Bootstrap Css -->
     <link
@@ -25,6 +30,13 @@
       href="{% static 'assets/css/app.min.css' %}"
       rel="stylesheet"  type="text/css"
     />
+
+    <!-- FontAwesome Css
+    <link rel="stylesheet" href="{% static 'assets/fontawsome-v.6.4.2-css/all.css' %}"> -->
+
+    <link rel="stylesheet" href="{% static 'assets/css/custom.css' %}">
+
+    {% block styles %} {% endblock %}
   </head>
 
   <body data-sidebar="dark">
@@ -37,19 +49,19 @@
             <div class="navbar-brand-box">
               <a href="index.html" class="logo logo-dark">
                 <span class="logo-sm">
-                  <img src="{% static 'assets/images/logo-sm.png' %}" alt="" height="22" />
+                  <img src="{% static 'assets/images/logo -icon.png' %}" alt="" height="22" />
                 </span>
                 <span class="logo-lg">
-                  <img src="{% static 'assets/images/logo-dark.png' %}" alt="" height="17" />
+                  <img src="{% static 'assets/images/logo -h -black.png' %}" alt="" height="17" />
                 </span>
               </a>
 
               <a href="index.html" class="logo logo-light">
                 <span class="logo-sm">
-                  <img src="{% static 'assets/images/logo-sm.png' %}" alt="" height="22" />
+                  <img src="{% static 'assets/images/logo -icon.png' %}" alt="" height="22" />
                 </span>
                 <span class="logo-lg">
-                  <img src="{% static 'assets/images/logo-light.png' %}" alt="" height="18" />
+                  <img src="{% static 'assets/images/logo -h -white.png' %}" alt="" height="35" />
                 </span>
               </a>
             </div>
@@ -422,95 +434,7 @@
       </header>
 
       <!-- ========== Left Sidebar Start ========== -->
-      <div class="vertical-menu">
-        <div data-simplebar class="h-100">
-          <!--- Sidemenu -->
-          <div id="sidebar-menu">
-            <!-- Left Menu Start -->
-            <ul class="metismenu list-unstyled" id="side-menu">
-              <li class="menu-title">Main</li>
-
-              <li>
-                <a href="index.html" class="waves-effect">
-                  <i class="ti-home"></i
-                  ><span class="badge rounded-pill bg-primary float-end"
-                    >1</span
-                  >
-                  <span>Dashboard</span>
-                </a>
-              </li>
-
-              <li class="menu-title">Leave Management</li>
-              <li>
-                <a href="#" class="waves-effect">
-                  <i class="ti-calendar"></i>
-                  <span>All Leave</span>
-                </a>
-              </li>
-
-              <li>
-                <a href="#" class="waves-effect">
-                  <i class="ti-calendar"></i>
-                  <span>Add Leave</span>
-                </a>
-              </li>
-
-              <li>
-                <a href="#" class="waves-effect">
-                  <i class="ti-calendar"></i>
-                  <span>Extend Leave</span>
-                </a>
-              </li>
-
-              <li>
-                <a href="#" class="waves-effect">
-                  <i class="ti-calendar"></i>
-                  <span>Summary Leave</span>
-                </a>
-              </li>
-
-              <li>
-                <a href="#" class="waves-effect">
-                  <i class="ti-calendar"></i>
-                  <span>Agents on leave</span>
-                </a>
-              </li>
-
-              <li>
-                <a href="#" class="waves-effect">
-                  <i class="ti-calendar"></i>
-                  <span>Leave postponement</span>
-                </a>
-              </li>
-
-              <li>
-                <a href="#" class="waves-effect">
-                  <i class="ti-calendar"></i>
-                  <span>Leave postponement</span>
-                </a>
-              </li>
-
-              <li>
-                <a href="#" class="waves-effect">
-                  <i class="ti-calendar"></i>
-                  <span>Cancellation of leave</span>
-                </a>
-              </li>
-
-              <li>
-                <a href="#" class="waves-effect">
-                  <i class="ti-calendar"></i>
-                  <span>return from leave</span>
-                </a>
-              </li>
-
-
-              
-            </ul>
-          </div>
-          <!-- Sidebar -->
-        </div>
-      </div>
+      {% include 'partials/sidebar.html' %}
       <!-- Left Sidebar End -->)
 
       <!-- ============================================================== -->
@@ -523,7 +447,7 @@
             <div class="page-title-box">
               <div class="row align-items-center">
                 <div class="col-md-8">
-                  <h6 class="page-title">Starter Page</h6>
+                  <h6 class="page-title">{% block page-title %} Starter Page {% endblock %}</h6>
                   <ol class="breadcrumb m-0">
                     <li class="breadcrumb-item"><a href="#">Veltrix</a></li>
                     <li class="breadcrumb-item"><a href="#">Extra Pages</a></li>
@@ -559,6 +483,8 @@
               </div>
             </div>
             <!-- end page title -->
+
+            {% block page-content %} {% endblock %}
           </div>
           <!-- container-fluid -->
         </div>
@@ -681,6 +607,10 @@
     <script src="{% static 'assets/libs/simplebar/simplebar.min.js' %}"></script>
     <script src="{% static 'assets/libs/node-waves/waves.min.js' %}"></script>
 
+
+    {% block scripts %} {% endblock %}
+
     <script src="{% static 'assets/js/app.js' %}"></script>
+
   </body>
 </html>
