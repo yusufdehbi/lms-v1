@@ -17,6 +17,7 @@ urlpatterns = [
 
     # -> requests management
     path('request-management', views.request_management, name='request-management'),
+    path('add-leave-request', views.add_leave_request_view, name="add-leave-request"),
     
     # -> leaves policies management
     path('leave-type-management', views.leave_type_management_view, name='leave-type-management'),

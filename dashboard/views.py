@@ -21,6 +21,9 @@ def request_management(request):
 def leave_type_management_view(request):
     return render(request,  'leave_type_management.html')
 
+def add_leave_request_view(request):
+    return render(request, 'add_leave_request.html')
+
 # def add_leave_type_view(request):
 #     return render(request, 'add_leave_type.html')
 
