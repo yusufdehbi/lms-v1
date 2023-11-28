@@ -2759,7 +2759,7 @@ div.table-responsive > div.dataTables_wrapper > div.row > div[class^=col-]:last-
   margin: 0;
 }
 .wizard > .steps > ul > li {
-  width: 25%;
+  width: 33.33%;
 }
 .wizard > .steps .current-info {
   position: absolute;

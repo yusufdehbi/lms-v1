@@ -1,5 +1,10 @@
 {% extends 'starter.html' %} {% load static %} {% block page-title %} Add Leave
-Request {% endblock %} {% block page-content %}
+Request {% endblock %}
+
+
+{% block page-content %}
+
+
 
 <div class="row">
   <div class="col-sm-12">
@@ -13,8 +18,8 @@ Request {% endblock %} {% block page-content %}
         <form id="form-horizontal" class="form-horizontal form-wizard-wrapper">
           <h3>Select Agent</h3>
           <fieldset>
-            <div class="row">
-                <div class="col-lg-6">
+            <div class="row py-3">
+                <div class="col-sm-12 col-md-6  col-lg-7 col-xl-8">
                     <div class="card">
                         <div class="card-body">
                             <h4 class="card-title">Striped rows</h4>
@@ -63,7 +68,7 @@ Request {% endblock %} {% block page-content %}
                         </div>
                     </div>
                 </div>
-                <div class="col-md-3 border">
+                <div class="col-sm-12  col-md-6 col-lg-5 col-xl-4  border">
                     <div class="user-sidebar">
                         <div class="card">
                             <div class="card-body">
@@ -213,67 +218,29 @@ Request {% endblock %} {% block page-content %}
                                 <div class="mb-3">
                                     <label class="form-label">Single Select</label>
                                     <select class="form-control select2">
-                                        <option>Select</option>
-                                        <optgroup label="Alaskan/Hawaiian Time Zone">
-                                            <option value="AK">Alaska</option>
-                                            <option value="HI">Hawaii</option>
-                                        </optgroup>
-                                        <optgroup label="Pacific Time Zone">
-                                            <option value="CA">California</option>
-                                            <option value="NV">Nevada</option>
-                                            <option value="OR">Oregon</option>
-                                            <option value="WA">Washington</option>
-                                        </optgroup>
-                                        <optgroup label="Mountain Time Zone">
-                                            <option value="AZ">Arizona</option>
-                                            <option value="CO">Colorado</option>
-                                            <option value="ID">Idaho</option>
-                                            <option value="MT">Montana</option>
-                                            <option value="NE">Nebraska</option>
-                                            <option value="NM">New Mexico</option>
-                                            <option value="ND">North Dakota</option>
-                                            <option value="UT">Utah</option>
-                                            <option value="WY">Wyoming</option>
-                                        </optgroup>
-                                        <optgroup label="Central Time Zone">
-                                            <option value="AL">Alabama</option>
-                                            <option value="AR">Arkansas</option>
-                                            <option value="IL">Illinois</option>
-                                            <option value="IA">Iowa</option>
-                                            <option value="KS">Kansas</option>
-                                            <option value="KY">Kentucky</option>
-                                            <option value="LA">Louisiana</option>
-                                            <option value="MN">Minnesota</option>
-                                            <option value="MS">Mississippi</option>
-                                            <option value="MO">Missouri</option>
-                                            <option value="OK">Oklahoma</option>
-                                            <option value="SD">South Dakota</option>
-                                            <option value="TX">Texas</option>
-                                            <option value="TN">Tennessee</option>
-                                            <option value="WI">Wisconsin</option>
-                                        </optgroup>
-                                        <optgroup label="Eastern Time Zone">
-                                            <option value="CT">Connecticut</option>
-                                            <option value="DE">Delaware</option>
-                                            <option value="FL">Florida</option>
-                                            <option value="GA">Georgia</option>
-                                            <option value="IN">Indiana</option>
-                                            <option value="ME">Maine</option>
-                                            <option value="MD">Maryland</option>
-                                            <option value="MA">Massachusetts</option>
-                                            <option value="MI">Michigan</option>
-                                            <option value="NH">New Hampshire</option>
-                                            <option value="NJ">New Jersey</option>
-                                            <option value="NY">New York</option>
-                                            <option value="NC">North Carolina</option>
-                                            <option value="OH">Ohio</option>
-                                            <option value="PA">Pennsylvania</option>
-                                            <option value="RI">Rhode Island</option>
-                                            <option value="SC">South Carolina</option>
-                                            <option value="VT">Vermont</option>
-                                            <option value="VA">Virginia</option>
-                                            <option value="WV">West Virginia</option>
-                                        </optgroup>
+                                      <option selected disabled>Select</option>
+                                      <optgroup label="Work Positions">
+                                          <option value="AK">Software Engineer</option>
+                                          <option value="HI">Product Manager</option>
+                                          <option value="CA">Data Analyst</option>
+                                          <option value="NV">Sales Representative</option>
+                                          <option value="OR">Graphic Designer</option>
+                                          <option value="WA">Marketing Specialist</option>
+                                          <option value="AZ">HR Manager</option>
+                                          <option value="CO">Financial Analyst</option>
+                                          <option value="ID">Customer Service Representative</option>
+                                          <option value="MT">Project Manager</option>
+                                          <option value="NE">Accountant</option>
+                                          <option value="NM">UX Designer</option>
+                                          <option value="ND">Operations Manager</option>
+                                          <option value="UT">Software Developer</option>
+                                          <option value="WY">Content Writer</option>
+                                          <option value="AL">Sales Manager</option>
+                                          <option value="AR">Marketing Manager</option>
+                                          <option value="IL">Business Analyst</option>
+                                          <option value="IA">Web Developer</option>
+                                          <option value="KS">Digital Marketing Specialist</option>
+                                      </optgroup>
                                     </select>
                                     <!-- end -->
                                 </div>
@@ -399,6 +366,16 @@ Request {% endblock %} {% block page-content %}
 <!-- row end -->
 
 {% endblock page-content %}
+
+{% block startStyles %}
+  
+<link href="{% static 'assets/libs/select2/css/select2.min.css' %}" rel="stylesheet" type="text/css">
+<link href="{% static 'assets/libs/bootstrap-datepicker/css/bootstrap-datepicker.min.css' %}" rel="stylesheet">
+<link href="{% static 'assets/libs/spectrum-colorpicker2/spectrum.min.css' %}" rel="stylesheet" type="text/css">
+<link href="{% static 'assets/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.min.css' %}" rel="stylesheet">
+
+{% endblock startStyles %}
+
 {% block scripts %}
 <!-- form wizard -->
 <script src="{% static 'assets/libs/select2/js/select2.min.js' %}"></script>
@@ -415,203 +392,213 @@ Request {% endblock %} {% block page-content %}
 <!-- form wizard init -->
 <script src="{% static 'assets/js/pages/form-wizard.init.js' %}"></script>
 
+<!-- advanced form -->
 <script>
   !(function (t) {
-    "use strict";
-    function e() {
-      for (
-        var e = document
-            .getElementById("topnav-menu-content")
-            .getElementsByTagName("a"),
-          t = 0,
-          a = e.length;
-        t < a;
-        t++
-      )
-        "nav-item dropdown active" ===
-          e[t].parentElement.getAttribute("class") &&
-          (e[t].parentElement.classList.remove("active"),
-          e[t].nextElementSibling.classList.remove("show"));
-    }
-    var a, n;
-    function s(e) {
-      1 == t("#light-mode-switch").prop("checked") && "light-mode-switch" === e
-        ? (t("html").removeAttr("dir"),
-          t("#dark-mode-switch").prop("checked", !1),
-          t("#rtl-mode-switch").prop("checked", !1),
-          t("#bootstrap-style").attr("href", "assets/css/bootstrap.min.css"),
-          t("#app-style").attr("href", "assets/css/app.min.css"),
-          document.body.setAttribute("data-bs-theme", "light"),
-          "light" == document.body.getAttribute("data-bs-theme") &&
-          "light" == document.body.getAttribute("data-topbar")
-            ? (document.body.setAttribute("data-topbar", "light"), (a = !0))
-            : "light" == document.body.getAttribute("data-bs-theme") &&
-              "dark" == document.body.getAttribute("data-topbar")
-            ? document.body.setAttribute("data-topbar", "dark")
-            : document.body.setAttribute("data-topbar", "light"),
-          sessionStorage.setItem("is_visited", "light-mode-switch"))
-        : 1 == t("#dark-mode-switch").prop("checked") &&
-          "dark-mode-switch" === e
-        ? (t("html").removeAttr("dir"),
-          t("#light-mode-switch").prop("checked", !1),
-          t("#rtl-mode-switch").prop("checked", !1),
-          t("#bootstrap-style").attr("href", "assets/css/bootstrap.min.css"),
-          t("#app-style").attr("href", "assets/css/app.min.css"),
-          document.body.setAttribute("data-bs-theme", "dark"),
-          document.body.setAttribute("data-topbar", "dark"),
-          sessionStorage.setItem("is_visited", "dark-mode-switch"))
-        : 1 == t("#rtl-mode-switch").prop("checked") &&
-          "rtl-mode-switch" === e &&
-          (t("#light-mode-switch").prop("checked", !1),
-          t("#dark-mode-switch").prop("checked", !1),
-          t("#bootstrap-style").attr(
-            "href",
-            "assets/css/bootstrap-rtl.min.css"
-          ),
-          t("#app-style").attr("href", "assets/css/app-rtl.min.css"),
-          t("html").attr("dir", "rtl"),
-          document.body.setAttribute("data-bs-theme", "light"),
-          document.body.setAttribute("data-topbar", "light"),
-          sessionStorage.setItem("is_visited", "rtl-mode-switch"));
-    }
-    function o() {
-      document.webkitIsFullScreen ||
-        document.mozFullScreen ||
-        document.msFullscreenElement ||
-        (console.log("pressed"), t("body").removeClass("fullscreen-enable"));
-    }
-    if (
-      (t("#side-menu").metisMenu(),
-      t("#vertical-menu-btn").on("click", function (e) {
-        e.preventDefault(),
-          t("body").toggleClass("sidebar-enable"),
-          992 <= t(window).width()
-            ? t("body").toggleClass("vertical-collpsed")
-            : t("body").removeClass("vertical-collpsed");
+  "use strict";
+  function e() {}
+  (e.prototype.init = function () {
+    t(".select2").select2(),
+      t(".select2-limiting").select2({ maximumSelectionLength: 2 }),
+      t("#colorpicker-default").spectrum(),
+      t("#colorpicker-showalpha").spectrum({ showAlpha: !0 }),
+      t("#colorpicker-showpaletteonly").spectrum({
+        showPaletteOnly: !0,
+        showPalette: !0,
+        color: "#34c38f",
+        palette: [
+          ["#556ee6", "white", "#34c38f", "rgb(255, 128, 0);", "#50a5f1"],
+          ["red", "yellow", "green", "blue", "violet"],
+        ],
       }),
-      t("#sidebar-menu a").each(function () {
-        var e = window.location.href.split(/[?#]/)[0];
-        this.href == e &&
-          (t(this).addClass("active"),
-          t(this).parent().addClass("mm-active"),
-          t(this).parent().parent().addClass("mm-show"),
-          t(this).parent().parent().prev().addClass("mm-active"),
-          t(this).parent().parent().parent().addClass("mm-active"),
-          t(this).parent().parent().parent().parent().addClass("mm-show"),
-          t(this)
-            .parent()
-            .parent()
-            .parent()
-            .parent()
-            .parent()
-            .addClass("mm-active"));
+      t("#colorpicker-togglepaletteonly").spectrum({
+        showPaletteOnly: !0,
+        togglePaletteOnly: !0,
+        togglePaletteMoreText: "more",
+        togglePaletteLessText: "less",
+        color: "#556ee6",
+        palette: [
+          ["#000", "#444", "#666", "#999", "#ccc", "#eee", "#f3f3f3", "#fff"],
+          ["#f00", "#f90", "#ff0", "#0f0", "#0ff", "#00f", "#90f", "#f0f"],
+          [
+            "#f4cccc",
+            "#fce5cd",
+            "#fff2cc",
+            "#d9ead3",
+            "#d0e0e3",
+            "#cfe2f3",
+            "#d9d2e9",
+            "#ead1dc",
+          ],
+          [
+            "#ea9999",
+            "#f9cb9c",
+            "#ffe599",
+            "#b6d7a8",
+            "#a2c4c9",
+            "#9fc5e8",
+            "#b4a7d6",
+            "#d5a6bd",
+          ],
+          [
+            "#e06666",
+            "#f6b26b",
+            "#ffd966",
+            "#93c47d",
+            "#76a5af",
+            "#6fa8dc",
+            "#8e7cc3",
+            "#c27ba0",
+          ],
+          [
+            "#c00",
+            "#e69138",
+            "#f1c232",
+            "#6aa84f",
+            "#45818e",
+            "#3d85c6",
+            "#674ea7",
+            "#a64d79",
+          ],
+          [
+            "#900",
+            "#b45f06",
+            "#bf9000",
+            "#38761d",
+            "#134f5c",
+            "#0b5394",
+            "#351c75",
+            "#741b47",
+          ],
+          [
+            "#600",
+            "#783f04",
+            "#7f6000",
+            "#274e13",
+            "#0c343d",
+            "#073763",
+            "#20124d",
+            "#4c1130",
+          ],
+        ],
       }),
-      t(".navbar-nav a").each(function () {
-        var e = window.location.href.split(/[?#]/)[0];
-        this.href == e &&
-          (t(this).addClass("active"),
-          t(this).parent().addClass("active"),
-          t(this).parent().parent().addClass("active"),
-          t(this).parent().parent().parent().addClass("active"),
-          t(this).parent().parent().parent().parent().addClass("active"),
-          t(this)
-            .parent()
-            .parent()
-            .parent()
-            .parent()
-            .parent()
-            .addClass("active"));
+      t("#colorpicker-showintial").spectrum({ showInitial: !0 }),
+      t("#colorpicker-showinput-intial").spectrum({
+        showInitial: !0,
+        showInput: !0,
       }),
-      t(document).ready(function () {
-        var e;
-        0 < t("#sidebar-menu").length &&
-          0 < t("#sidebar-menu .mm-active .active").length &&
-          300 < (e = t("#sidebar-menu .mm-active .active").offset().top) &&
-          ((e -= 300),
-          t(".vertical-menu .simplebar-content-wrapper").animate(
-            { scrollTop: e },
-            "slow"
-          ));
+      t("#datepicker").datepicker(),
+      t("#datepicker-inline").datepicker(),
+      t("#datepicker-multiple").datepicker({
+        numberOfMonths: 3,
+        showButtonPanel: !0,
       }),
-      t('[data-bs-toggle="fullscreen"]').on("click", function (e) {
-        e.preventDefault(),
-          t("body").toggleClass("fullscreen-enable"),
-          document.fullscreenElement ||
-          document.mozFullScreenElement ||
-          document.webkitFullscreenElement
-            ? document.cancelFullScreen
-              ? document.cancelFullScreen()
-              : document.mozCancelFullScreen
-              ? document.mozCancelFullScreen()
-              : document.webkitCancelFullScreen &&
-                document.webkitCancelFullScreen()
-            : document.documentElement.requestFullscreen
-            ? document.documentElement.requestFullscreen()
-            : document.documentElement.mozRequestFullScreen
-            ? document.documentElement.mozRequestFullScreen()
-            : document.documentElement.webkitRequestFullscreen &&
-              document.documentElement.webkitRequestFullscreen(
-                Element.ALLOW_KEYBOARD_INPUT
-              );
+      t("#datepicker").datepicker(),
+      t("#datepicker-autoclose").datepicker({
+        autoclose: !0,
+        todayHighlight: !0,
       }),
-      document.addEventListener("fullscreenchange", o),
-      document.addEventListener("webkitfullscreenchange", o),
-      document.addEventListener("mozfullscreenchange", o),
-      t(".right-bar-toggle").on("click", function (e) {
-        t("body").toggleClass("right-bar-enabled");
+      t("#datepicker-multiple-date").datepicker({
+        format: "mm/dd/yyyy",
+        clearBtn: !0,
+        multidate: !0,
+        multidateSeparator: ",",
       }),
-      t(document).on("click", "body", function (e) {
-        0 < t(e.target).closest(".right-bar-toggle, .right-bar").length ||
-          t("body").removeClass("right-bar-enabled");
-      }),
-      document.getElementById("topnav-menu-content"))
-    ) {
-      for (
-        var r = document
-            .getElementById("topnav-menu-content")
-            .getElementsByTagName("a"),
-          c = 0,
-          d = r.length;
-        c < d;
-        c++
-      )
-        r[c].onclick = function (e) {
-          "#" === e.target.getAttribute("href") &&
-            (e.target.parentElement.classList.toggle("active"),
-            e.target.nextElementSibling.classList.toggle("show"));
-        };
-      window.addEventListener("resize", e);
-    }
-    t(function () {
-      t('[data-bs-toggle="tooltip"]').tooltip();
+      t("#date-range").datepicker({ toggleActive: !0 });
+    t(".vertical-spin").TouchSpin({
+      verticalbuttons: !0,
+      verticalupclass: "ion-plus-round",
+      verticaldownclass: "ion-minus-round",
+      buttondown_class: "btn btn-primary",
+      buttonup_class: "btn btn-primary",
     }),
-      t(function () {
-        t('[data-bs-toggle="popover"]').popover();
+      t("input[name='demo1']").TouchSpin({
+        min: 0,
+        max: 100,
+        step: 0.1,
+        decimals: 2,
+        boostat: 5,
+        maxboostedstep: 10,
+        postfix: "%",
+        buttondown_class: "btn btn-primary",
+        buttonup_class: "btn btn-primary",
       }),
-      window.sessionStorage &&
-        ((n = sessionStorage.getItem("is_visited"))
-          ? (t(".right-bar input:checkbox").prop("checked", !1),
-            t("#" + n).prop("checked", !0),
-            s(n))
-          : sessionStorage.setItem("is_visited", "light-mode-switch")),
-      t("#light-mode-switch, #dark-mode-switch, #rtl-mode-switch").on(
-        "change",
-        function (e) {
-          s(e.target.id),
-            1 ==
-              (a =
-                "light" == document.body.getAttribute("data-bs-theme") &&
-                "light" == document.body.getAttribute("data-topbar")
-                  ? !0
-                  : a) &&
-              "light" == document.body.getAttribute("data-bs-theme") &&
-              document.body.setAttribute("data-topbar", "light");
-        }
-      ),
-      t(window).on("load", function () {
-        t("#status").fadeOut(), t("#preloader").delay(350).fadeOut("slow");
+      t("input[name='demo2']").TouchSpin({
+        min: -1e9,
+        max: 1e9,
+        stepinterval: 50,
+        maxboostedstep: 1e7,
+        prefix: "$",
+        buttondown_class: "btn btn-primary",
+        buttonup_class: "btn btn-primary",
       }),
-      Waves.init();
-  })(jQuery);
+      t("input[name='demo3']").TouchSpin({
+        buttondown_class: "btn btn-primary",
+        buttonup_class: "btn btn-primary",
+      }),
+      t("input[name='demo3_21']").TouchSpin({
+        initval: 40,
+        buttondown_class: "btn btn-primary",
+        buttonup_class: "btn btn-primary",
+      }),
+      t("input[name='demo3_22']").TouchSpin({
+        initval: 40,
+        buttondown_class: "btn btn-primary",
+        buttonup_class: "btn btn-primary",
+      }),
+      t("input[name='demo5']").TouchSpin({
+        prefix: "pre",
+        postfix: "post",
+        buttondown_class: "btn btn-primary",
+        buttonup_class: "btn btn-primary",
+      }),
+      t("input[name='demo0']").TouchSpin({
+        buttondown_class: "btn btn-primary",
+        buttonup_class: "btn btn-primary",
+      }),
+      t("input#defaultconfig").maxlength({
+        warningClass: "badge bg-info",
+        limitReachedClass: "badge bg-warning",
+      }),
+      t("input#thresholdconfig").maxlength({
+        threshold: 20,
+        warningClass: "badge bg-info",
+        limitReachedClass: "badge bg-warning",
+      }),
+      t("input#moreoptions").maxlength({
+        alwaysShow: !0,
+        warningClass: "badge bg-success",
+        limitReachedClass: "badge bg-danger",
+      }),
+      t("input#alloptions").maxlength({
+        alwaysShow: !0,
+        warningClass: "badge bg-success",
+        limitReachedClass: "badge bg-danger",
+        separator: " out of ",
+        preText: "You typed ",
+        postText: " chars available.",
+        validate: !0,
+      }),
+      t("textarea#textarea").maxlength({
+        alwaysShow: !0,
+        warningClass: "badge bg-info",
+        limitReachedClass: "badge bg-warning",
+      }),
+      t("input#placement").maxlength({
+        alwaysShow: !0,
+        placement: "top-left",
+        warningClass: "badge bg-info",
+        limitReachedClass: "badge bg-warning",
+      });
+  }),
+    (t.AdvancedForm = new e()),
+    (t.AdvancedForm.Constructor = e);
+})(window.jQuery),
+  (function () {
+    "use strict";
+    window.jQuery.AdvancedForm.init();
+  })();
+
 </script>
+
 {% endblock scripts %}
