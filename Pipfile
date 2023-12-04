@@ -6,6 +6,8 @@ name = "pypi"
 [packages]
 django = "*"
 django-clearcache = "*"
+pillow = "*"
+mysqlclient = "*"
 
 [dev-packages]
 
